@@ -15,11 +15,21 @@
         <div id="app">
 
             <div class="container">
-                <div class="btn btn-light" @click="toggleMsg()">
-                    <span v-if="showMsg">HIDE</span>
-                    <span v-else>SHOW</span>
+                <div class="row">
+                    <div class="col m-5">
+                        <div class="btn btn-outline-info btn-lg btn-block p-3" :class="{'active': showMsg}" @click="toggleMsg()">
+                            <span class="material-icons" v-if="showMsg">
+                                visibility
+                            </span>
+                            <span class="material-icons" v-else>
+                                visibility_off
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <div class="display-5" v-if="showMsg">{{ titleMsg }}</div>
+                <div class="row">
+                    <div class="display-5" v-if="showMsg">{{ titleMsg }}</div>
+                </div>
             </div>
 
         </div>
